@@ -1,12 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DA 2019</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            font-weight: 500;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans';
+            background: black;
+            color: white;
+            font-size: 1.1rem;
+            letter-spacing: 0.005em;
+            padding: 5%;
+        }
+
+        h1 {
+            text-indent: 1.5em;
+        }
+
+        a {
+            color: inherit;
+            display: block;
+            text-decoration: none;
+            border-bottom: .1px solid gray;
+            padding-bottom: .25em;
+            padding-top: .25em;
+        }
+
+        .site-header {
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 30rem){
+            body {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <script>
+    /**
+    * Shuffles array in place. ES6 version
+    * @param {Array} a items An array containing the items.
+    */
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+    }
+    
+    window.addEventListener('DOMContentLoaded', function () {
+
+        let people = [
+            {
+                name: 'Max Kohler 1',
+                url: '/max-kohler/'
+            },
+            {
+                name: 'Max Kohler 2',
+                url: '/max-kohler/'
+            },
+            {
+                name: 'Max Kohler 3',
+                url: '/max-kohler/'
+            }
+        ]
+
+        let container = document.querySelector('.people-list');
+        
+        people = shuffle(people);
+        
+        for (let i = 0; i < people.length; i++){
+            let p = people[i];
+            let el = document.createElement('a')
+            el.setAttribute('href', p.url)
+            el.innerText = p.name;
+
+            container.appendChild(el)
+        }
+
+
+    })
+    </script>
 </head>
+
 <body>
-    Content goes here
+    <header class="site-header">
+        <h1>
+            Digital Aesthetics — Spring 2019
+        </h1>
+        <p>12 original works on the digital world by visual communication students from the Royal College of Art.</p>
+    </header>
+    <nav class="people-list">
+    </nav>
 </body>
+
 </html>
