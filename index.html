@@ -38,6 +38,13 @@
             padding-top: .25em;
         }
 
+        a:last-child {
+            border-bottom: 0;
+        }
+        a:hover, a:focus {
+            opacity: .8;
+        }
+
         .site-header {
             margin-bottom: 1rem;
         }
@@ -89,6 +96,10 @@
                     url: 'https://bit.ly/2THChoj'
                 },
                 {
+                    name: 'Phillip Veech',
+                    url: 'https://vimeo.com/327318294'
+                },
+                {
                     name: 'Lexiao Guan',
                     url: './lexiao-guan/'
                 },
@@ -98,7 +109,7 @@
                 },
                 {
                     name: 'Magda Tritto',
-                    url: 'https://www.youtube.com/watch?v=TBZzCwmBJqE'
+                    url: 'https://www.youtube.com/watch?v=eh9FqdI5JOI'
                 },
                 {
                     name: 'Jack Warne',
@@ -107,6 +118,7 @@
             ]
 
             let container = document.querySelector('.people-list');
+            let countEl = document.querySelector('#count');
 
             people = shuffle(people);
 
@@ -119,6 +131,8 @@
                 container.appendChild(el)
             }
 
+            count.innerText = people.length;
+
 
         })
     </script>
@@ -129,7 +143,7 @@
         <h1>
             Digital Aesthetics — Spring 2019
         </h1>
-        <p>12 original works on the digital world by visual communication students from the Royal College of Art.</p>
+        <p><span id='count'></span> original works on the digital world by visual communication students from the Royal College of Art.</p>
     </header>
     <nav class="people-list">
     </nav>
